@@ -1,0 +1,25 @@
+show system state | match "\.max"
+
+#vsysあたりのセキュリティポリシー制限
+Details:vsys-3501 (vsys2)
+    Error: Number of security rules (205) exceeds vsys vsys2 resource limit(53)
+    Error: Failed to parse security policy
+(Module: device)
+
+＃筐体全体のURLlist内のURL数
+  →140*9*79vsys=99540 vsys81:URLF*5=140*5=700
+vsys-3580 (vsys81)
+    Error: Number of entries (100062) exceeds platform capacity (100000)
+(Module: device)
+Configuration is invalid
+
+＃筐体あたりのURLプロファイル数
+vsys-3581 (vsys82)
+    Error: Total number of profiles (756) exceeds platform capacity (750)
+(Module: device)
+Configuration is invalid
+
+
+
+[edit]                                                                                                                                                                               
+root1@PA-5260# 
