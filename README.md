@@ -44,3 +44,4 @@ python3 resource_check_r2.py $dir/device6.log
   :
   :
 ```
+
