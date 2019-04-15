@@ -13,9 +13,12 @@ def count_setting(pattern, num_split):
     setting_pre = 'dumy'
     list_count = [997]
 
+    i = 0
+
     for line in lines:
+        # i += 1    #debug
         if re.match('^\n', line):   #改行の行の場合処理しない
-            print('null')
+            # print('null')
             pass
         elif re.match('set vsys vsys.+', line):
             result = re.match('set vsys vsys.+', line)
@@ -50,7 +53,7 @@ def count_setting(pattern, num_split):
             list_count.append(count_seting)
             # list_count.append(997)
             # count_seting = 0
-            print(line,'end')
+            # print(i,line,'end')   #debug
             pass 
         pass
     del list_count[1]    
@@ -72,31 +75,32 @@ def utilization():
     pass
 
 
+
 filename = sys.argv[1].split("/")
-print('** %s **' % filename[len(filename)-1])
+print('**%s**' % filename[len(filename)-1])
 
 
 # service
-print('[servise]')
+print('-servise')
 list_count = count_setting(pattern = '.+vsys[1-9]+ service .+', num_split = 4)  #vsys毎のservie設定数
-print(list_count)
+print(" -count per vsys:\n",list_count)
 
 total_count = total(list_count)
-print(total_count)
+print(" -totalcount:",total_count)
 
 #security rule
-print('[security rule]')
+print('-security rule')
 list_count = count_setting(pattern = '.+security rules .+', num_split = 6)  #vsys毎のsecurity rules設定数
-print(list_count)
+print(" -count per vsys:\n",list_count)
 
 total_count = total(list_count)
-print(total_count)    
+print(" -totalcount:",total_count)    
 
 #url
-print('[url-filtering]')
+print('-url-filtering')
 list_count = count_setting(pattern = '.+vsys[1-9]+ profiles url-filtering .+', num_split = 5)  #vsys毎のurl-filtering設定数
-print(list_count)
+print(" -count per vsys:\n",list_count)
 
 total_count = total(list_count)
-print(total_count)    
+print(" -totalcount:",total_count)    
 
