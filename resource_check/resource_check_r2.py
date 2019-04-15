@@ -18,7 +18,7 @@ def count_setting(pattern, num_split):
     for line in lines:
         # i += 1    #debug
         if re.match('^\n', line):   #改行の行の場合処理しない
-            # print('null')
+            # print('null') #debug
             pass
         elif re.match('set vsys vsys.+', line):
             result = re.match('set vsys vsys.+', line)
@@ -32,12 +32,12 @@ def count_setting(pattern, num_split):
                     if (setting == setting_pre):    #前回の設定名称と同じ場合カウントしない
                         setting_pre = setting
                         vsys_pre = vsys
-                        #print('...',setting)
+                        #print('...',setting)   #debug
                     elif (setting != setting_pre):  #前回の設定名称とお違う場合、カウントする
                         setting_pre = setting
                         count_seting += 1
                         vsys_pre = vsys
-                        #print(count_seting,setting)
+                        #print(count_seting,setting)    #debug
                         pass
                 else:
                     vsys_pre = vsys
@@ -46,13 +46,11 @@ def count_setting(pattern, num_split):
                 list_count.append(count_seting)
                 count_seting = 0
                 vsys_pre = vsys
-                # print(vsys_pre, len(list_count))
+                # print(vsys_pre, len(list_count))  #debug
                 pass
         elif re.match('vsys', vsys_pre):    #vsys設定の読み込みで最後の行が終わったときに最後のカウント数をappendする
             vsys_pre = 'end'
             list_count.append(count_seting)
-            # list_count.append(997)
-            # count_seting = 0
             # print(i,line,'end')   #debug
             pass 
         pass
@@ -65,7 +63,7 @@ def total(list_count):
     total_count = 0
     for i in range(1,len(list_count)):
         total_count+=list_count[i]
-        # print(i,total_count)
+        # print(i,total_count)      #debug
     return(total_count)
     pass
     
