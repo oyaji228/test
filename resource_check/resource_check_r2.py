@@ -33,7 +33,7 @@ def count_setting(pattern, num_split):
                         setting_pre = setting
                         vsys_pre = vsys
                         #print('...',setting)   #debug
-                    elif (setting != setting_pre):  #前回の設定名称とお違う場合、カウントする
+                    elif (setting != setting_pre):  #前回の設定名称と違う場合、カウントする
                         setting_pre = setting
                         count_seting += 1
                         vsys_pre = vsys
@@ -68,9 +68,6 @@ def total(list_count):
     pass
     
 
-def utilization():
-    
-    pass
 
 
 
