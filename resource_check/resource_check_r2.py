@@ -78,7 +78,7 @@ print('**%s**' % filename[len(filename)-1])
 # service
 print('-servise')
 list_count = count_setting(pattern = '.+vsys[1-9]+ service .+', num_split = 4)  #vsys毎のservie設定数
-print(" -count per vsys:\n",list_count)
+#print(" -count per vsys:\n",list_count)
 
 total_count = total(list_count)
 print(" -totalcount:",total_count)
@@ -86,7 +86,7 @@ print(" -totalcount:",total_count)
 #security rule
 print('-security rule')
 list_count = count_setting(pattern = '.+security rules .+', num_split = 6)  #vsys毎のsecurity rules設定数
-print(" -count per vsys:\n",list_count)
+#print(" -count per vsys:\n",list_count)
 
 total_count = total(list_count)
 print(" -totalcount:",total_count)    
@@ -94,7 +94,7 @@ print(" -totalcount:",total_count)
 #url
 print('-url-filtering')
 list_count = count_setting(pattern = '.+vsys[1-9]+ profiles url-filtering .+', num_split = 5)  #vsys毎のurl-filtering設定数
-print(" -count per vsys:\n",list_count)
+#print(" -count per vsys:\n",list_count)
 
 total_count = total(list_count)
 print(" -totalcount:",total_count)    
