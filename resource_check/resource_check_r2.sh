@@ -1,7 +1,7 @@
 #!/usr/local/bin/zsh
 
 #dir="/Users/sunao/workspace/github/doc/vutm/20190611"
-dir="/Users/sunao/workspace/github/doc/vutm/20191114"
+dir="/Users/sunao/workspace/github/doc/vutm/20191223"
 
 #echo $dir
 
